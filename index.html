@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vitor Hugo Correia · BI</title>
+<meta name="description" content="Portfólio de Vitor Hugo Correia, Analista de BI e Dados: Power BI, SQL e automação para Compras, Finanças e Supply.">
+<meta property="og:title" content="Vitor Hugo Correia · Analista de BI e Dados">
+<meta property="og:description" content="Dashboards, KPIs e automação para Compras, Finanças e Supply. Projetos de Power BI e desafios de SQL.">
+<meta name="theme-color" content="#060709">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="is-loading">
+
+<!-- preloader -->
+<div id="loader" aria-hidden="true">
+  <div class="ld-frame">
+    <span class="ld-corner tl"></span><span class="ld-corner tr"></span><span class="ld-corner bl"></span><span class="ld-corner br"></span>
+    <svg class="ld-mark" viewBox="0 0 120 120"><path d="M14 24 L60 104 L106 24" /><path d="M38 24 L60 62 L82 24" /><path d="M60 62 L60 104" /></svg>
+  </div>
+  <div class="ld-words mono"><span>Dados</span><span>Decisão</span><span>Impacto</span></div>
+  <div class="ld-num mono" id="ldNum">000</div>
+  <div class="ld-bar"><i id="ldBar"></i></div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cur" aria-hidden="true"><span class="cur-label"></span></div>
+
+<header class="hdr" id="hdr">
+  <a class="brand" href="#top" data-go="hero" aria-label="Início">
+    <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M14 24 L60 104 L106 24" /><path d="M38 24 L60 62 L82 24" /><path d="M60 62 L60 104" /></svg>
+    <span>Vitor<br>Correia</span>
+  </a>
+  <div class="hdr-right">
+    <div class="lang mono" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="pt" class="on">PT</button><span>/</span><button type="button" data-lang="en">EN</button>
+    </div>
+    <a class="pill light magnetic" href="#contato" data-go="contato"><span data-i18n="talk">Fale comigo</span></a>
+    <button class="pill magnetic" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span data-i18n="menu">Menu</span><i class="burger"><b></b><b></b></i></button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu">
+  <div class="menu-in">
+    <ol class="menu-links">
+      <li><a href="#sobre" data-go="sobre"><small class="mono">01</small><span data-i18n="nav_about">Sobre</span></a></li>
+      <li><a href="#impacto" data-go="impacto"><small class="mono">02</small><span data-i18n="nav_impact">Impacto</span></a></li>
+      <li><a href="#carreira" data-go="carreira"><small class="mono">03</small><span data-i18n="nav_career">Carreira</span></a></li>
+      <li><a href="#projetos" data-go="projetos"><small class="mono">04</small><span data-i18n="nav_projects">Projetos</span></a></li>
+      <li><a href="#sql" data-go="sql"><small class="mono">05</small><span>SQL</span></a></li>
+      <li><a href="#formacao" data-go="formacao"><small class="mono">06</small><span data-i18n="nav_edu">Formação</span></a></li>
+      <li><a href="#contato" data-go="contato"><small class="mono">07</small><span data-i18n="nav_contact">Contato</span></a></li>
+    </ol>
+    <div class="menu-side mono" id="menuSide"></div>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-top">
+      <h1 class="hero-title" id="heroTitle"></h1>
+    </div>
+    <div class="hero-bottom">
+      <ul class="hero-tags mono" id="heroTags"></ul>
+      <div class="hero-card">
+        <div id="badgeSlot"></div>
+        <div class="hc-row">
+          <div class="hc-cell mono"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span>São Paulo · BR</span></div>
+          <div class="hc-cell mono" data-i18n="hc_years">3+ anos transformando dados em decisão</div>
+        </div>
+        <p class="hc-text" data-i18n="hc_text">Power BI, SQL e automação para Compras, Finanças e Supply.</p>
+        <div class="hc-cta">
+          <a class="pill light magnetic" href="#projetos" data-go="projetos"><span data-i18n="cta_projects">Ver projetos</span></a>
+          <a class="pill magnetic" id="cvBtn" href="#" target="_blank" rel="noopener"><span data-i18n="cta_cv">Baixar CV</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll mono"><span data-i18n="scroll">Role para descobrir</span><i></i></div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sec" id="sobre">
+    <div class="wrap">
+      <div class="label mono">//01 <span data-i18n="nav_about">Sobre</span></div>
+      <p class="scrub" id="aboutLead"></p>
+      <div class="about-grid">
+        <div class="about-side mono">
+          <span data-i18n="focus">Foco em</span>
+          <b data-i18n="focus_v">Compras · Finanças · Supply Chain</b>
+          <span data-i18n="tools">Ferramentas</span>
+          <b>Power BI · DAX · Power Query · SQL · Excel</b>
+        </div>
+        <div class="about-body" id="aboutBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STACK -->
+  <section class="marquee-sec" aria-label="Stack">
+    <div class="mq" id="mq1"><div class="mq-track"></div></div>
+    <div class="mq outline" id="mq2"><div class="mq-track"></div></div>
+  </section>
+
+  <div class="stripes to-light" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- IMPACTO (claro) -->
+  <section class="sec light" id="impacto">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="label mono">//02 <span data-i18n="nav_impact">Impacto</span></div>
+        <h2 class="split" data-i18n="impact_t">Resultados medidos, não promessas</h2>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="stack-box" id="stackGrid"></div>
+    </div>
+  </section>
+
+  <div class="stripes to-dark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- CARREIRA -->
+  <section class="sec" id="carreira">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="label mono">//03 <span data-i18n="nav_career">Carreira</span></div>
+        <h2 class="split" data-i18n="career_t">Da operação ao dado</h2>
+        <p class="sec-sub" data-i18n="career_p">Comecei no centro de distribuição, passei por finanças e cheguei ao BI. Por isso entendo o processo por trás de cada número.</p>
+      </div>
+      <div class="career">
+        <div class="career-sticky"><div class="yr" id="yr">2026</div><div class="yr-co mono" id="yrCo">Accenture Brasil</div></div>
+        <div class="jobs" id="timeline"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="sec projects" id="projetos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="label mono">//04 <span>Power BI</span></div>
+        <h2 class="split" data-i18n="bi_t">Cases de dashboards</h2>
+        <p class="sec-sub" data-i18n="bi_p">Cada projeto mostra o problema de negócio, como foi modelado, as medidas DAX principais e o que muda para quem decide.</p>
+      </div>
+    </div>
+    <div class="hs" id="hs"><div class="hs-track" id="biGrid"></div></div>
+    <div class="wrap"><p class="sample mono" id="biSample"></p></div>
+  </section>
+
+  <!-- SQL -->
+  <section class="sec" id="sql">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="label mono">//05 <span>SQL</span></div>
+        <h2 class="split" data-i18n="sql_t">Desafios de SQL</h2>
+        <p class="sec-sub" data-i18n="sql_p">Perguntas reais de Compras, Finanças e Supply respondidas com SQL: a pergunta, a query e o resultado.</p>
+      </div>
+      <div class="sql-wrap" id="sqlWrap"></div>
+      <p class="sample mono" id="sqlSample"></p>
+    </div>
+  </section>
+
+  <div class="stripes to-light" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- FORMAÇÃO (claro) -->
+  <section class="sec light" id="formacao">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="label mono">//06 <span data-i18n="nav_edu">Formação</span></div>
+        <h2 class="split" data-i18n="edu_t">Formação e certificações</h2>
+      </div>
+      <div class="edu" id="eduList"></div>
+      <div class="certs" id="certList"></div>
+    </div>
+  </section>
+
+  <div class="stripes to-dark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- CONTATO -->
+  <section class="sec contact" id="contato">
+    <div class="wrap">
+      <div class="label mono">//07 <span data-i18n="nav_contact">Contato</span></div>
+      <h2 class="contact-t split" data-i18n="contact_t">Vamos conversar sobre dados?</h2>
+      <div class="contact-row">
+        <p id="seeking"></p>
+        <a class="orb magnetic" href="#" id="orb"><span data-i18n="talk">Fale comigo</span></a>
+      </div>
+      <div class="contact-links" id="contactBtns"></div>
+    </div>
+    <div class="giant" aria-hidden="true"><span>Vitor</span><span>Correia</span></div>
+    <footer class="foot mono"><span>© <span id="year"></span> Vitor Hugo Correia</span><span id="mailTxt"></span><span data-i18n="foot">Feito com dados, café e Power BI.</span></footer>
+  </section>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modal-box" id="modalBox"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<div class="admin" id="admin"></div>
+
+<script src="config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
